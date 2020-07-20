@@ -152,28 +152,38 @@ function addNode(){
 }
 
 SunBtn.onclick= function() {
-    newNode = new nodeComponent(0, 0, 2000000*Math.pow(10,24), 696*Math.pow(10,6),'red', 200, 200);
-    nodeMap.set(newNode, []);   
+    userMass = 2000000*Math.pow(10,24);
+    userRadius = 696*Math.pow(10,6);
+    // newNode = new nodeComponent(0, 0, 2000000*Math.pow(10,24), 696*Math.pow(10,6),'red', 200, 200);
+    // nodeMap.set(newNode, []);   
 }
 
 MercuryBtn.onclick= function() {
-    newNode = new nodeComponent(0, 0, 3.285*Math.pow(10,23), 2.44*Math.pow(10,6),'blue', 800, 200);
-    nodeMap.set(newNode, []);   
+    userMass = 3.285*Math.pow(10,23);
+    userRadius = 2.44*Math.pow(10,6);
+    // newNode = new nodeComponent(0, 0, 3.285*Math.pow(10,23), 2.44*Math.pow(10,6),'blue', 800, 200);
+    // nodeMap.set(newNode, []);   
 }
 
 VenusBtn.onclick= function() {
-    newNode = new nodeComponent(0, 0, 4.867*Math.pow(10,24), 6.0518*Math.pow(10,6),'red', 600, 200);
-    nodeMap.set(newNode, []);   
+    userMass = 4.867*Math.pow(10,24);
+    userRadius = 6.0518*Math.pow(10,6);
+    // newNode = new nodeComponent(0, 0, 4.867*Math.pow(10,24), 6.0518*Math.pow(10,6),'red', 600, 200);
+    // nodeMap.set(newNode, []);   
 }
 
 EarthBtn.onclick= function() {
-    newNode = new nodeComponent(0, 0, 6*Math.pow(10,24), 6*Math.pow(10,6),'red', 600, 300);
-    nodeMap.set(newNode, []);   
+    userMass = 6*Math.pow(10,24);
+    userRadius = 6*Math.pow(10,6);
+    // newNode = new nodeComponent(0, 0, 6*Math.pow(10,24), 6*Math.pow(10,6),'red', 600, 300);
+    // nodeMap.set(newNode, []);   
 }
 
 MarsBtn.onclick= function() {
-    newNode = new nodeComponent(0, 0, 6.39*Math.pow(10,23), 3.385*Math.pow(10,6),'red', 600, 400);
-    nodeMap.set(newNode, []);   
+    userMass = 6.39*Math.pow(10,23);
+    userRadius = 3.385*Math.pow(10,6);
+    // newNode = new nodeComponent(0, 0, 6.39*Math.pow(10,23), 3.385*Math.pow(10,6),'red', 600, 400);
+    // nodeMap.set(newNode, []);   
 }
 
 JupiterBtn.onclick= function() {
