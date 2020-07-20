@@ -1,8 +1,6 @@
-//todo: implement way to get planets much bigger looking but same mass for easier visualization 
-// add scale bar, add gravity field lines
-//fix collisions
-// import noUiSlider from 'nouislider';
-// import 'nouislider/distribute/nouislider.css';
+//todo: add labels, colors to specific cellestial bodies, add ability to label otherwise
+//todo: fix collisions
+//todo: choose velocity, choose cellestial or custom body, click mouse to release
 
 var myGameArea;
 var canvasHeight = 900;
@@ -22,6 +20,8 @@ var context_obj = canvas_obj.getContext("2d");
 let nodeMap = new Map();
 var mouseNode;
 var myCircle;
+var userMass = 6*Math.pow(10,24);
+var userRadius = 6*Math.pow(10,6);
 
 var rangeslider = document.getElementById("sliderRange"); 
         // rangeslider.oninput = function() { 
@@ -99,51 +99,111 @@ function clickedNode(){
 }
 
 function addNode(){
-    var CellestialBody = window.prompt("Enter 'sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', or blank to enter your own specs");
-    if (CellestialBody == ''){
-    var userMass = parseInt(Math.pow(10,24)*window.prompt("Enter ball mass * 10^24kg (sun enter 2,000,000, earth enter 6): ")) || Math.pow(10,24)*2000;
-    var userRadius = parseInt(Math.pow(10,6)*window.prompt("Enter ball radius * 10^6 M, (sun enter 696, Earth enter 6): ")) || 69*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'sun'){
-        var userMass = 2000000*Math.pow(10,24);
-        var userRadius = 696*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'earth'){
-        var userMass = 6*Math.pow(10,24);
-        var userRadius = 6*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'jupiter'){
-        var userMass = 2000*Math.pow(10,24);
-        var userRadius = 69*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'saturn'){
-        var userMass = 5.683*Math.pow(10,26);
-        var userRadius = 58.2*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'uranus'){
-        var userMass = 8.68*Math.pow(10,25);
-        var userRadius = 25.3*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'neptune'){
-        var userMass = 1.024*Math.pow(10,24);
-        var userRadius = 24.6*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'venus'){
-        var userMass = 4.867*Math.pow(10,24);
-        var userRadius = 6.0518*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'mars'){
-        var userMass = 6.39*Math.pow(10,23);
-        var userRadius = 3.385*Math.pow(10,6);
-    }
-    else if (CellestialBody == 'mercury'){
-        var userMass = 3.285*Math.pow(10,23);
-        var userRadius = 2.44*Math.pow(10,6);
-    }
+    //var CellestialBody = window.prompt("Enter 'sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', or blank to enter your own specs");
+    //if (CellestialBody == ''){
+    //var userMass = parseInt(Math.pow(10,24)*window.prompt("Enter ball mass * 10^24kg (sun enter 2,000,000, earth enter 6): ")) || Math.pow(10,24)*2000;
+    //var userRadius = parseInt(Math.pow(10,6)*window.prompt("Enter ball radius * 10^6 M, (sun enter 696, Earth enter 6): ")) || 69*Math.pow(10,6);
+    //}
+    // if (CellestialBody == 'sun'){
+    //     var userMass = 2000000*Math.pow(10,24);
+    //     var userRadius = 696*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'earth'){
+    //     var userMass = 6*Math.pow(10,24);
+    //     var userRadius = 6*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'jupiter'){
+    //     var userMass = 2000*Math.pow(10,24);
+    //     var userRadius = 69*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'saturn'){
+    //     var userMass = 5.683*Math.pow(10,26);
+    //     var userRadius = 58.2*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'uranus'){
+    //     var userMass = 8.68*Math.pow(10,25);
+    //     var userRadius = 25.3*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'neptune'){
+    //     var userMass = 1.024*Math.pow(10,24);
+    //     var userRadius = 24.6*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'venus'){
+    //     var userMass = 4.867*Math.pow(10,24);
+    //     var userRadius = 6.0518*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'mars'){
+    //     var userMass = 6.39*Math.pow(10,23);
+    //     var userRadius = 3.385*Math.pow(10,6);
+    // }
+    // else if (CellestialBody == 'mercury'){
+    //     var userMass = 3.285*Math.pow(10,23);
+    //     var userRadius = 2.44*Math.pow(10,6);
+    // }
+
+    // else {
+    //     var userMass = 6*Math.pow(10,24);
+    //     var userRadius = 6*Math.pow(10,6);
+    // }
     var userXVelocity = parseInt(window.prompt("Enter XVelocity: ")) || 0;
     var userYVelocity = -1*parseInt(window.prompt("Enter YVelocity: ")) || 0;
     newNode = new nodeComponent(userXVelocity, userYVelocity, userMass, userRadius,'pink', mouseX, mouseY);
     nodeMap.set(newNode, []);   
+}
+
+SunBtn.onclick= function() {
+    newNode = new nodeComponent(0, 0, 2000000*Math.pow(10,24), 696*Math.pow(10,6),'red', 200, 200);
+    nodeMap.set(newNode, []);   
+}
+
+MercuryBtn.onclick= function() {
+    newNode = new nodeComponent(0, 0, 3.285*Math.pow(10,23), 2.44*Math.pow(10,6),'blue', 800, 200);
+    nodeMap.set(newNode, []);   
+}
+
+VenusBtn.onclick= function() {
+    newNode = new nodeComponent(0, 0, 4.867*Math.pow(10,24), 6.0518*Math.pow(10,6),'red', 600, 200);
+    nodeMap.set(newNode, []);   
+}
+
+EarthBtn.onclick= function() {
+    newNode = new nodeComponent(0, 0, 6*Math.pow(10,24), 6*Math.pow(10,6),'red', 600, 300);
+    nodeMap.set(newNode, []);   
+}
+
+MarsBtn.onclick= function() {
+    newNode = new nodeComponent(0, 0, 6.39*Math.pow(10,23), 3.385*Math.pow(10,6),'red', 600, 400);
+    nodeMap.set(newNode, []);   
+}
+
+JupiterBtn.onclick= function() {
+    userMass = 2000*Math.pow(10,24), 
+    userRadius = 69*Math.pow(10,6)
+    
+    // newNode = new nodeComponent(0, 0, 2000*Math.pow(10,24), 69*Math.pow(10,6),'red', 600, 500);
+    // nodeMap.set(newNode, []);   
+}
+SaturnBtn.onclick= function() {
+    userMass = 5.683*Math.pow(10,26)
+    userRadius = 58.2*Math.pow(10,6)
+
+//     newNode = new nodeComponent(0, 0, 5.683*Math.pow(10,26), 58.2*Math.pow(10,6),'red', 600, 600);
+//    nodeMap.set(newNode, []);   
+}
+
+UranusBtn.onclick= function() {
+    userMass = 8.68*Math.pow(10,25)
+    userRadius = 25.3*Math.pow(10,6)
+    
+    // newNode = new nodeComponent(0, 0, 8.68*Math.pow(10,25), 25.3*Math.pow(10,6),'red', 600, 700);
+    // nodeMap.set(newNode, []);   
+}
+
+NeptuneBtn.onclick= function() {
+    userMass = 1.024*Math.pow(10,24)
+    userRadius = 24.6*Math.pow(10,6)
+    // newNode = new nodeComponent(0, 0, 1.024*Math.pow(10,24), 24.6*Math.pow(10,6),'red', 600, 800);
+    // nodeMap.set(newNode, []);   
 }
 
 function getMapSize(x) {
@@ -205,6 +265,8 @@ function nodeComponent(xVelocity, yVelocity, mass, radius, color, x, y) {
         scale = rangeslider.value;
         this.innerRad = this.innerRad*scale/this.currentScale;
         this.outerRad = this.outerRad*scale/this.currentScale;
+        this.xVelocity = this.xVelocity*scale/this.currentScale;
+        this.yVelocity = this.yVelocity*scale/this.currentScale;
         this.currentScale = scale; 
         // this.outerRad += 1;
     }
