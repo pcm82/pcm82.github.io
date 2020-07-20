@@ -1,6 +1,6 @@
-//todo: add labels, colors to specific cellestial bodies, add ability to label otherwise
 //todo: fix collisions
-//todo: choose velocity, choose cellestial or custom body, click mouse to release
+//todo: custom cellestial
+//todo: scale the distances with the scaling
 
 var myGameArea;
 var canvasHeight = 800;
@@ -12,11 +12,10 @@ let scale = 50;
 var myGamePieceWidth = 20;
 var myGamePieceHeight = 20;
 var ballRadius = 20;
-var ballMass = 5*Math.pow(10,18); //add ball mass, 1 kg
-const G = 6.67*Math.pow(10,-11);//should be 10^-11, but need to change units later
+var ballMass = 5*Math.pow(10,18); 
+const G = 6.67*Math.pow(10,-11);
 var canvas_obj = document.getElementById("canvas");
 var context_obj = canvas_obj.getContext("2d");
-//Node object, node position/information
 let nodeMap = new Map();
 var mouseNode;
 var myCircle;
@@ -24,39 +23,26 @@ var userMass = 6*Math.pow(10,24);
 var userRadius = 6*Math.pow(10,6);
 var userXVelocity = 0;
 var userXVelocity = 0;
+var userColor = 'pink';
+var userOuterColor = 'red'
 var rangeslider = document.getElementById("sliderRange"); 
 var xVelocityBtn = document.getElementById("xVelocityBtn");
 var yVelocityBtn = document.getElementById("yVelocityBtn");
-        // rangeslider.oninput = function() { 
-        //     // alert("Value = " + String(rangeslider.value)); 
-        // } 
-// let scale = rangeslider.value
+let mouseIn = false; 
 
 function startGame() {
     myGameArea.start();
     myGamePiece = new component( myGamePieceWidth, myGamePieceHeight,'red', 10, 30);
-    mouseNode = new nodeComponent(0, 0, 0, 0, 'black', mouseX, mouseY);
+    mouseNode = new nodeComponent(0, 0, 0, 0, 'black', 'black', mouseX, mouseY);
     document.addEventListener("mousedown", function (event) {
-        if(isInCanvas() && MouseInCanvas()){
             var clickedNodeObj = clickedNode();
             if (clickedNodeObj == null){
-                //TODO: make sure that you don't add and make connection
+                if(mouseIn){
                 addNode();
-            }
+            }}
         }
-    })
+    )
 }
-
-//slider goes here
-// var rangeslider = document.getElementById("sliderRange");
-// var output = document.getElementById("demo");
-// output.innerHTML = rangeslider.value;
-
-// rangeslider.oninput = function() {
-//   output.innerHTML = this.value;
-// }
-
-//slider goes here
 
 function isInCanvas(){
     var rect = canvas_obj.getBoundingClientRect();
@@ -69,16 +55,19 @@ function isInCanvas(){
 
 function MouseInCanvas(){
     if (mouseX > canvasWidth || mouseX < 0 ||  
-    mouseY > canvasHeight || mouseY < 0) {//this means it's touching the borders
-//     if (key1.x > rect.right || key1.x < 0 ||  
-//         key1.y > rect.bottom || key1.y < rect.top) {//this means it's touching the borders
-
+    mouseY > canvasHeight || mouseY < 0) {
     return false;}
     else {
         return true;
     }
 }
+function mouseOut(){ 
+    mouseIn = false; 
+}
 
+function mouseOver(){
+    mouseIn = true; 
+}
 
 function containsObject(obj, list) {
     var i;
@@ -103,121 +92,72 @@ function clickedNode(){
 
 
 function addNode(){
-    //var CellestialBody = window.prompt("Enter 'sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', or blank to enter your own specs");
-    //if (CellestialBody == ''){
-    //var userMass = parseInt(Math.pow(10,24)*window.prompt("Enter ball mass * 10^24kg (sun enter 2,000,000, earth enter 6): ")) || Math.pow(10,24)*2000;
-    //var userRadius = parseInt(Math.pow(10,6)*window.prompt("Enter ball radius * 10^6 M, (sun enter 696, Earth enter 6): ")) || 69*Math.pow(10,6);
-    //}
-    // if (CellestialBody == 'sun'){
-    //     var userMass = 2000000*Math.pow(10,24);
-    //     var userRadius = 696*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'earth'){
-    //     var userMass = 6*Math.pow(10,24);
-    //     var userRadius = 6*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'jupiter'){
-    //     var userMass = 2000*Math.pow(10,24);
-    //     var userRadius = 69*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'saturn'){
-    //     var userMass = 5.683*Math.pow(10,26);
-    //     var userRadius = 58.2*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'uranus'){
-    //     var userMass = 8.68*Math.pow(10,25);
-    //     var userRadius = 25.3*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'neptune'){
-    //     var userMass = 1.024*Math.pow(10,24);
-    //     var userRadius = 24.6*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'venus'){
-    //     var userMass = 4.867*Math.pow(10,24);
-    //     var userRadius = 6.0518*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'mars'){
-    //     var userMass = 6.39*Math.pow(10,23);
-    //     var userRadius = 3.385*Math.pow(10,6);
-    // }
-    // else if (CellestialBody == 'mercury'){
-    //     var userMass = 3.285*Math.pow(10,23);
-    //     var userRadius = 2.44*Math.pow(10,6);
-    // }
-
-    // else {
-    //     var userMass = 6*Math.pow(10,24);
-    //     var userRadius = 6*Math.pow(10,6);
-    // }
     userXVelocity = xVelocityBtn.value;
     userYVelocity = yVelocityBtn.value;
-    newNode = new nodeComponent(userXVelocity, userYVelocity, userMass, userRadius,'pink', mouseX, mouseY);
+    newNode = new nodeComponent(userXVelocity, userYVelocity, userMass, userRadius, userColor, userOuterColor, mouseX, mouseY);
     nodeMap.set(newNode, []);   
 }
 
 SunBtn.onclick= function() {
     userMass = 2000000*Math.pow(10,24);
     userRadius = 696*Math.pow(10,6);
-    // newNode = new nodeComponent(0, 0, 2000000*Math.pow(10,24), 696*Math.pow(10,6),'red', 200, 200);
-    // nodeMap.set(newNode, []);   
+    userColor = 'FFE484'
+    userOuterColor = 'FC9601'
 }
 
 MercuryBtn.onclick= function() {
     userMass = 3.285*Math.pow(10,23);
     userRadius = 2.44*Math.pow(10,6);
-    // newNode = new nodeComponent(0, 0, 3.285*Math.pow(10,23), 2.44*Math.pow(10,6),'blue', 800, 200);
-    // nodeMap.set(newNode, []);   
+    userColor = 'b5a7a7'
+    userOuterColor = '504e51'
 }
 
 VenusBtn.onclick= function() {
     userMass = 4.867*Math.pow(10,24);
     userRadius = 6.0518*Math.pow(10,6);
-    // newNode = new nodeComponent(0, 0, 4.867*Math.pow(10,24), 6.0518*Math.pow(10,6),'red', 600, 200);
-    // nodeMap.set(newNode, []);   
+    userColor = 'DDD8D4'
+    userOuterColor = 'BBB7AB'
 }
 
 EarthBtn.onclick= function() {
     userMass = 6*Math.pow(10,24);
     userRadius = 6*Math.pow(10,6);
-    // newNode = new nodeComponent(0, 0, 6*Math.pow(10,24), 6*Math.pow(10,6),'red', 600, 300);
-    // nodeMap.set(newNode, []);   
+    userColor = '10c135' 
+    userOuterColor = '0077be'
 }
 
 MarsBtn.onclick= function() {
     userMass = 6.39*Math.pow(10,23);
     userRadius = 3.385*Math.pow(10,6);
-    // newNode = new nodeComponent(0, 0, 6.39*Math.pow(10,23), 3.385*Math.pow(10,6),'red', 600, 400);
-    // nodeMap.set(newNode, []);   
+    userColor = '#e77d11';  
+    userOuterColor = '#c1440e';
 }
 
 JupiterBtn.onclick= function() {
-    userMass = 2000*Math.pow(10,24), 
-    userRadius = 69*Math.pow(10,6)
-    
-    // newNode = new nodeComponent(0, 0, 2000*Math.pow(10,24), 69*Math.pow(10,6),'red', 600, 500);
-    // nodeMap.set(newNode, []);   
+    userMass = 2000*Math.pow(10,24);
+    userRadius = 69*Math.pow(10,6);
+    userColor = '#ffb459';  
+    userOuterColor = '#C88B3A'; //rethink color?
 }
 SaturnBtn.onclick= function() {
     userMass = 5.683*Math.pow(10,26)
     userRadius = 58.2*Math.pow(10,6)
-
-//     newNode = new nodeComponent(0, 0, 5.683*Math.pow(10,26), 58.2*Math.pow(10,6),'red', 600, 600);
-//    nodeMap.set(newNode, []);   
+    userColor = '#C5AB6E';  
+    userOuterColor = '#343E47';
 }
 
 UranusBtn.onclick= function() {
-    userMass = 8.68*Math.pow(10,25)
-    userRadius = 25.3*Math.pow(10,6)
-    
-    // newNode = new nodeComponent(0, 0, 8.68*Math.pow(10,25), 25.3*Math.pow(10,6),'red', 600, 700);
-    // nodeMap.set(newNode, []);   
+    userMass = 8.68*Math.pow(10,25);
+    userRadius = 25.3*Math.pow(10,6); 
+    userColor = '#D5FbFc';  
+    userOuterColor = '#93B8Be';
 }
 
 NeptuneBtn.onclick= function() {
-    userMass = 1.024*Math.pow(10,24)
-    userRadius = 24.6*Math.pow(10,6)
-    // newNode = new nodeComponent(0, 0, 1.024*Math.pow(10,24), 24.6*Math.pow(10,6),'red', 600, 800);
-    // nodeMap.set(newNode, []);   
+    userMass = 1.024*Math.pow(10,24);
+    userRadius = 24.6*Math.pow(10,6);
+    userColor = '#89F3ff';  
+    userOuterColor = '#3e54e8';
 }
 
 velocityResetBtn.onclick = function() {
@@ -261,7 +201,7 @@ function component(width, height, color, x, y) {
 
 
 
-function nodeComponent(xVelocity, yVelocity, mass, radius, color, x, y) {
+function nodeComponent(xVelocity, yVelocity, mass, radius, color, outerColor, x, y) {
     this.xVelocity = xVelocity;
     this.yVelocity = yVelocity;
     this.mass = mass;
@@ -269,14 +209,15 @@ function nodeComponent(xVelocity, yVelocity, mass, radius, color, x, y) {
     this.y = y;
     this.radius = radius;
     this.color = color;
+    this.outerColor = outerColor;
     this.currentScale = scale; 
     this.innerRad = 1/50*this.radius/Math.pow(10,7)*scale;
     this.outerRad = 3/50*this.radius/Math.pow(10,7)*scale;
 
     this.update = function () {
         var gradient_center = ctx.createRadialGradient(this.x, this.y, this.innerRad, this.x, this.y, this.outerRad);
-        gradient_center.addColorStop(0, 'pink');
-        gradient_center.addColorStop(1, 'DeepPink');
+        gradient_center.addColorStop(0, this.color);
+        gradient_center.addColorStop(1, this.outerColor);
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.outerRad, 0, 2 * Math.PI, false);
         ctx.fillStyle = gradient_center;
@@ -287,10 +228,8 @@ function nodeComponent(xVelocity, yVelocity, mass, radius, color, x, y) {
         this.xVelocity = this.xVelocity*scale/this.currentScale;
         this.yVelocity = this.yVelocity*scale/this.currentScale;
         this.currentScale = scale; 
-        // this.outerRad += 1;
     }
     this.update_gradient = function () {
-        
         var gradient_outer = ctx.createRadialGradient(this.x, this.y, this.innerRad*10, this.x, this.y, this.outerRad);
         gradient_outer.addColorStop(0, 'rgba(52, 124, 232, 0.0)');
         gradient_outer.addColorStop(1, 'rgba(52, 124, 232, 0.4)');
@@ -298,8 +237,6 @@ function nodeComponent(xVelocity, yVelocity, mass, radius, color, x, y) {
         ctx.arc(this.x, this.y, this.outerRad*7, 0, 2 * Math.PI, false);
         ctx.fillStyle = gradient_outer;
         ctx.fill();
-        
-        
     }
 }
 
@@ -376,7 +313,6 @@ function moveBubbles(){
                 var y_scaled = 3/50*scale*Math.pow(10,7)*y_diff;
                 var x_scaled = 3/50*scale*Math.pow(10,7)*x_diff;
                 var rad_scaled = Math.sqrt(Math.pow(x_scaled,2)+Math.pow(y_scaled,2));
-                var rect = canvas_obj.getBoundingClientRect();
                 var Xforce = -1*(x_diff/rad_diff)*G*key1.mass*key2.mass/Math.pow(rad_scaled/scale/scale,2);
                 var Yforce = -1*(y_diff/rad_diff)*G*key1.mass*key2.mass/Math.pow(rad_scaled/scale/scale,2);
                 total_force.x += Xforce
@@ -390,12 +326,11 @@ function moveBubbles(){
                     let v2y = key2.yVelocity;
                     let m1 = key1.mass;
                     let m2 = key2.mass;
-                    if (key1.yVelocity*(key2.y-key1.y) > 0 && Math.abs(key2.y-key1.y) < rad_diff) { //if the y-velocity is the same direction as the object it's hitting 
+                    if (key1.yVelocity*(key2.y-key1.y) > 0 && Math.abs(Math.pow(key2.y-key1.y,2) + Math.pow(key2.x-key1.x,2)) < Math.pow(rad_diff,2)) { //if the y-velocity is the same direction as the object it's hitting 
                         key1.yVelocity = D*(m1-m2)*v1y/M + (2*m2)*v2y/M
                         key2.yVelocity = D*(2*m1)*v1y/M + (m2-m1)*v2y/M
                     }
-
-                    if (key1.xVelocity*(key2.x-key1.x) > 0 && Math.abs(key2.x-key1.x) < rad_diff) { //if the x-velocity is the same direction as the object it's hitting 
+                    if (key1.xVelocity*(key2.x-key1.x) > 0 && Math.abs(Math.pow(key2.y-key1.y,2) + Math.pow(key2.x-key1.x,2)) < Math.pow(rad_diff,2)) { //if the x-velocity is the same direction as the object it's hitting 
                         key1.xVelocity = D*(m1-m2)*v1x/M + (2*m2)*v2x/M
                         key2.xVelocity = D*(2*m1)*v1x/M + (m2-m1)*v2x/M
                     }
