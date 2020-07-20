@@ -3,7 +3,7 @@
 //todo: choose velocity, choose cellestial or custom body, click mouse to release
 
 var myGameArea;
-var canvasHeight = 900;
+var canvasHeight = 800;
 var canvasWidth = 1600;
 var mouseX = 0;
 var mouseY = 0;
@@ -68,8 +68,8 @@ function isInCanvas(){
 }
 
 function MouseInCanvas(){
-    if (mouseX > 1600 || mouseX < 0 ||  
-    mouseY > 900 || mouseY < 0) {//this means it's touching the borders
+    if (mouseX > canvasWidth || mouseX < 0 ||  
+    mouseY > canvasHeight || mouseY < 0) {//this means it's touching the borders
 //     if (key1.x > rect.right || key1.x < 0 ||  
 //         key1.y > rect.bottom || key1.y < rect.top) {//this means it's touching the borders
 
