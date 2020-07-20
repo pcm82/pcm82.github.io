@@ -22,8 +22,11 @@ var mouseNode;
 var myCircle;
 var userMass = 6*Math.pow(10,24);
 var userRadius = 6*Math.pow(10,6);
-
+var userXVelocity = 0;
+var userXVelocity = 0;
 var rangeslider = document.getElementById("sliderRange"); 
+var xVelocityBtn = document.getElementById("xVelocityBtn");
+var yVelocityBtn = document.getElementById("yVelocityBtn");
         // rangeslider.oninput = function() { 
         //     // alert("Value = " + String(rangeslider.value)); 
         // } 
@@ -98,6 +101,7 @@ function clickedNode(){
     return null;
 }
 
+
 function addNode(){
     //var CellestialBody = window.prompt("Enter 'sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', or blank to enter your own specs");
     //if (CellestialBody == ''){
@@ -145,8 +149,8 @@ function addNode(){
     //     var userMass = 6*Math.pow(10,24);
     //     var userRadius = 6*Math.pow(10,6);
     // }
-    var userXVelocity = parseInt(window.prompt("Enter XVelocity: ")) || 0;
-    var userYVelocity = -1*parseInt(window.prompt("Enter YVelocity: ")) || 0;
+    userXVelocity = xVelocityBtn.value;
+    userYVelocity = yVelocityBtn.value;
     newNode = new nodeComponent(userXVelocity, userYVelocity, userMass, userRadius,'pink', mouseX, mouseY);
     nodeMap.set(newNode, []);   
 }
@@ -214,6 +218,11 @@ NeptuneBtn.onclick= function() {
     userRadius = 24.6*Math.pow(10,6)
     // newNode = new nodeComponent(0, 0, 1.024*Math.pow(10,24), 24.6*Math.pow(10,6),'red', 600, 800);
     // nodeMap.set(newNode, []);   
+}
+
+velocityResetBtn.onclick = function() {
+    xVelocityBtn.value = 0;
+    yVelocityBtn.value = 0;
 }
 
 function getMapSize(x) {
