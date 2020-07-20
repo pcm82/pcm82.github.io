@@ -21,6 +21,7 @@ height: 100%;
 position: relative;
 top: 0;
 left: 0;
+text-align: center;
 
 }
 #buttons{
@@ -28,12 +29,12 @@ z-index: 100;
 }
 
 .rangeslider{
-width: 50%;
+width: 100%;
 }
 
 .myslider {
 -webkit-appearance: none;
-background: #FCF3CF  ;
+background: #b1e1f0  ;
 width: 50%;
 height: 20px;
 opacity: 2;
