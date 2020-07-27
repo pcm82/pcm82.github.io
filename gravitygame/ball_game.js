@@ -1,5 +1,4 @@
-//todo: fix collisions
-//todo: custom cellestial
+//todo: fix collisions properties (don't always seem to conserve momentum in right direction)
 //todo: scale the distances with the scaling
 
 var myGameArea;
@@ -138,7 +137,7 @@ JupiterBtn.onclick= function() {
     userMass = 2000*Math.pow(10,24);
     userRadius = 69*Math.pow(10,6);
     userColor = '#ffb459';  
-    userOuterColor = '#C88B3A'; //rethink color?
+    userOuterColor = '#C88B3A'; 
 }
 SaturnBtn.onclick= function() {
     userMass = 5.683*Math.pow(10,26)
@@ -162,10 +161,10 @@ NeptuneBtn.onclick= function() {
 }
 
 customBtn.onclick = function() {
-    userMass = window.prompt("Enter mass *10^24 (enter 6 for earthlike")*Math.pow(10,24)
-    userRadius = window.prompt("Enter radius *10^6 (enter 6 for earthlike")*Math.pow(10,6)
-    userColor = String(window.prompt("Enter color (hexcode or 'black', 'red', etc..."))
-    userOuterColor = String(window.prompt("Enter outer color (hexcode or 'black', 'red', etc..."))
+    userMass = window.prompt("Enter mass *10^24 (enter 6 for earthlike mass)")*Math.pow(10,24)
+    userRadius = window.prompt("Enter radius *10^6 (enter 6 for earthlike radius)")*Math.pow(10,6)
+    userColor = String(window.prompt("Enter color (hexcode or 'black', 'red', etc...)"))
+    userOuterColor = String(window.prompt("Enter outer color (hexcode or 'black', 'red', etc...)"))
 }
 
 velocityResetBtn.onclick = function() {
@@ -345,7 +344,6 @@ function moveBubbles(){
             }
         }
         }
-        //Actual Movement happens here
         key1.xVelocity += total_force.x/key1.mass*t/1000;
         key1.x += key1.xVelocity*t/1000
         key1.yVelocity += total_force.y/key1.mass*t/1000;
