@@ -28,6 +28,7 @@ var userOuterColor = 'red'
 var rangeslider = document.getElementById("sliderRange"); 
 var xVelocityBtn = document.getElementById("xVelocityBtn");
 var yVelocityBtn = document.getElementById("yVelocityBtn");
+var customBtn = document.getElementById("CustomBtn");
 let mouseIn = false; 
 
 function startGame() {
@@ -93,7 +94,7 @@ function clickedNode(){
 
 function addNode(){
     userXVelocity = xVelocityBtn.value;
-    userYVelocity = yVelocityBtn.value;
+    userYVelocity = -yVelocityBtn.value;
     newNode = new nodeComponent(userXVelocity, userYVelocity, userMass, userRadius, userColor, userOuterColor, mouseX, mouseY);
     nodeMap.set(newNode, []);   
 }
@@ -158,6 +159,13 @@ NeptuneBtn.onclick= function() {
     userRadius = 24.6*Math.pow(10,6);
     userColor = '#89F3ff';  
     userOuterColor = '#3e54e8';
+}
+
+customBtn.onclick = function() {
+    userMass = window.prompt("Enter mass *10^24 (enter 6 for earthlike")*Math.pow(10,24)
+    userRadius = window.prompt("Enter radius *10^6 (enter 6 for earthlike")*Math.pow(10,6)
+    userColor = String(window.prompt("Enter color (hexcode or 'black', 'red', etc..."))
+    userOuterColor = String(window.prompt("Enter outer color (hexcode or 'black', 'red', etc..."))
 }
 
 velocityResetBtn.onclick = function() {
@@ -345,7 +353,3 @@ function moveBubbles(){
         key1.update();
     }
 }
-
-
-
-
