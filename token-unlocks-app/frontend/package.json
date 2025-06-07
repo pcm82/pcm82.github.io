@@ -2,7 +2,7 @@
   "name": "token-unlocks-frontend",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://pcm82.github.io/token-unlocks-app",
+  "homepage": "https://pcm82.github.io/token-unlocks-app/frontend",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
