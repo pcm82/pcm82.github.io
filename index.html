@@ -3,36 +3,33 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Peter Munn's professional resume website." />
+        <meta name="description" content="Peter Munn is a software engineer focused on AI infrastructure, data platforms, and backend systems." />
         <meta name="author" content="Peter Munn" />
         <title>Peter Munn - Software Engineer</title>
         <link rel="icon" type="image/x-icon" href="assets/img/petermunn.ico" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" />
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Peter Munn</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="Peter Munn's Profile" /></span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="Peter Munn's profile" /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#background">Background</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="assets/PETER_MUNN_RESUME_2025.pdf" target="_blank">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.linkedin.com/in/petercmunn/" target="_blank">LinkedIn</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://cbva.com/p/petercmunn" target="_blank">Beach Volleyball Profile</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/@peter_m_volleyball" target="_blank">Beach Volleyball YouTube Channel</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://beachvolleyballrules.com/" target="_blank">Beach Volleyball Rules Website</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#resume">Resume</a></li>
                 </ul>
             </div>
         </nav>
@@ -44,54 +41,163 @@
                         <span class="text-primary">Munn</span>
                     </h1>
                     <div class="subheading mb-5">
-                        San Diego, California • (443) 739-8953 •
-                        <a href="mailto:petercmunn@gmail.com">petercmunn@gmail.com</a>
+                        San Diego, California &bull; (443) 739-8953 &bull;
+                        <a href="mailto:petercmunn@gmail.com">petercmunn@gmail.com</a> &bull;
+                        <a href="https://www.linkedin.com/in/petercmunn/" target="_blank" rel="noopener">LinkedIn</a>
                     </div>
-                    <p class="lead mb-5">Software Engineer at Google. Previously a Software Engineer at GoDaddy and Amazon.</p>
-            
+                    <p class="lead mb-4">Software engineer on Atlassian's Central AI &amp; Data Platform, building data ingestion, permission propagation, ML signal, and real-time observability systems for AI products.</p>
+                    <p class="lead mb-5">Previously at Google, GoDaddy, and Amazon, with experience across AI infrastructure, ads safety, data lake platforms, backend APIs, and cloud cost optimization.</p>
+
                     <div class="family-info">
                         <p class="lead mb-4">
                             I come from a family of nature enthusiasts and entrepreneurs:
                         </p>
-            
+
                         <div class="family-member">
                             <strong>My dad, Charles Munn:</strong>
-                            <a href="https://southwild.com/" target="_blank">SouthWild Website</a>,
-                            <a href="https://www.instagram.com/southwildtravel/" target="_blank">SouthWild Instagram</a>,
-                            <a href="https://en.wikipedia.org/wiki/Charles_A._Munn_III" target="_blank">Wikipedia</a>
+                            <a href="https://southwild.com/" target="_blank" rel="noopener">SouthWild Website</a>,
+                            <a href="https://www.instagram.com/southwildtravel/" target="_blank" rel="noopener">SouthWild Instagram</a>,
+                            <a href="https://en.wikipedia.org/wiki/Charles_A._Munn_III" target="_blank" rel="noopener">Wikipedia</a>
                         </div>
-            
-                        <div class="family-member">
-                            <strong>My sister, Paulina Munn:</strong>
-                            North American Wilderness Company (NorthWild Travel):
-                            <a href="https://www.instagram.com/northwildtravel/" target="_blank">NorthWild Instagram</a>
-                        </div>
-            
+
                         <div class="family-member">
                             <strong>My mom, Mariana Valqui:</strong>
                             Lodge in the Peruvian Amazon (Lago Soledad):
-                            <a href="https://www.instagram.com/lago_soledad/" target="_blank">Lago Soledad Instagram</a>
+                            <a href="https://www.instagram.com/lago_soledad/" target="_blank" rel="noopener">Lago Soledad Instagram</a>
+                        </div>
+
+                        <div class="family-member">
+                            <strong>My older sister, Paulina Munn:</strong>
+                            North American Wilderness Company (NorthWild Travel):
+                            <a href="https://www.instagram.com/northwildtravel/" target="_blank" rel="noopener">NorthWild Instagram</a>
+                        </div>
+
+                        <div class="family-member">
+                            <strong>My twin sister, Julia Munn:</strong>
+                            Sustainability advocate working with brown bears in Alaska with my older sister:
+                            <a href="https://www.instagram.com/ecomunny/" target="_blank" rel="noopener">Eco Munny Instagram</a>
                         </div>
                     </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <section class="resume-section" id="background">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Background</h2>
+                    <p class="lead mb-4">I grew up moving between Brazil, Peru, and the United States through family, school, and ecotourism work. That background shaped how I communicate, learn languages, and think about nature, systems, and communities.</p>
+
+                    <div class="subheading mb-3">Spoken Languages</div>
+                    <div class="language-grid mb-5">
+                        <div class="language-card">
+                            <h3 class="mb-1">English</h3>
+                            <p class="mb-0"><strong>Native.</strong> Born in the United States and educated in English.</p>
+                        </div>
+                        <div class="language-card">
+                            <h3 class="mb-1">Spanish</h3>
+                            <p class="mb-0"><strong>Native.</strong> Lived in Peru for 3+ years on and off; my mother is Peruvian and works in ecotourism in the Peruvian Amazon.</p>
+                        </div>
+                        <div class="language-card">
+                            <h3 class="mb-1">Portuguese</h3>
+                            <p class="mb-0"><strong>Fluent.</strong> Lived in Brazil for 3+ years on and off, including time connected to the Amazon and Pantanal through my dad's ecotourism work.</p>
+                        </div>
+                        <div class="language-card">
+                            <h3 class="mb-1">German</h3>
+                            <p class="mb-0"><strong>Fluent.</strong> My mother is half German and my grandmother is German; I took three years of German in high school and advanced professional German at Cornell.</p>
+                        </div>
+                        <div class="language-card">
+                            <h3 class="mb-1">Mandarin Chinese</h3>
+                            <p class="mb-0"><strong>Conversational.</strong> Studied Mandarin for three years in an immersion-based high school program.</p>
+                        </div>
+                    </div>
+
+                    <div class="subheading mb-3">Places &amp; Ecotourism Maps</div>
+                    <div class="map-grid mb-5">
+                        <div class="map-card">
+                            <h3 class="mb-1">Peru</h3>
+                            <p>Highlighted: Lima, Puerto Maldonado, and the Peruvian Amazon.</p>
+                            <div class="leaflet-map" id="peru-map" role="img" aria-label="Map of Peru highlighting Lima, Puerto Maldonado, and the Peruvian Amazon"></div>
+                        </div>
+                        <div class="map-card">
+                            <h3 class="mb-1">Brazil</h3>
+                            <p>Highlighted: the Amazon and the Pantanal, tied to my dad's ecotourism work.</p>
+                            <div class="leaflet-map" id="brazil-map" role="img" aria-label="Map of Brazil highlighting the Amazon and Pantanal"></div>
+                        </div>
+                        <div class="map-card map-card-wide">
+                            <h3 class="mb-1">United States</h3>
+                            <p>Highlighted: Baltimore, Andover, Ithaca, San Diego, and San Francisco.</p>
+                            <div class="leaflet-map leaflet-map-wide" id="us-map" role="img" aria-label="Map of the United States highlighting Baltimore, Andover, Ithaca, San Diego, and San Francisco"></div>
+                        </div>
+                    </div>
+
+                    <div class="subheading mb-3">Places Timeline</div>
+                    <p>I spent my childhood moving between the United States, Brazil, and Peru, then moved through Massachusetts, New York, San Diego, and San Francisco for school and work.</p>
+                    <details class="life-timeline">
+                        <summary>Show detailed timeline</summary>
+                        <ol>
+                            <li style="--years: 0.25;"><span>Born</span><div class="timeline-bar"></div>United States</li>
+                            <li style="--years: 2;"><span>Ages 0-2</span><div class="timeline-bar"></div>Brazil</li>
+                            <li style="--years: 2;"><span>Ages 2-4</span><div class="timeline-bar"></div>Peru</li>
+                            <li style="--years: 2;"><span>Ages 4-6</span><div class="timeline-bar"></div>United States</li>
+                            <li style="--years: 1;"><span>Ages 6-7</span><div class="timeline-bar"></div>Brazil</li>
+                            <li style="--years: 2;"><span>Ages 7-9</span><div class="timeline-bar"></div>United States</li>
+                            <li style="--years: 1;"><span>Ages 9-10</span><div class="timeline-bar"></div>Peru</li>
+                            <li style="--years: 2;"><span>Ages 10-12</span><div class="timeline-bar"></div>United States</li>
+                            <li style="--years: 1;"><span>Ages 12-13</span><div class="timeline-bar"></div>Brazil</li>
+                            <li style="--years: 1;"><span>Ages 13-14</span><div class="timeline-bar"></div>United States</li>
+                            <li style="--years: 4;"><span>Ages 14-18</span><div class="timeline-bar"></div>Boarding school at Phillips Academy in Andover, Massachusetts</li>
+                            <li style="--years: 1;"><span>Ages 18-19</span><div class="timeline-bar"></div>Cornell University in Ithaca, New York</li>
+                            <li style="--years: 0.25;"><span>Age 19, summer</span><div class="timeline-bar"></div>Lived in San Francisco while interning and had an apartment in the Tenderloin</li>
+                            <li style="--years: 2;"><span>Ages 19-21</span><div class="timeline-bar"></div>Cornell University in Ithaca, New York</li>
+                            <li style="--years: 1;"><span>Ages 21-22</span><div class="timeline-bar"></div>San Diego for work</li>
+                            <li style="--years: 1;"><span>Ages 22-23</span><div class="timeline-bar"></div>San Francisco for work</li>
+                            <li style="--years: 3;"><span>Ages 23-present</span><div class="timeline-bar"></div>San Diego</li>
+                        </ol>
+                    </details>
                 </div>
             </section>
             <hr class="m-0" />
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Experience</h2>
+                    <p class="mb-5">
+                        <a href="https://www.linkedin.com/in/petercmunn/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            View my LinkedIn profile
+                        </a>
+                    </p>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Software Engineer</h3>
-                            <div class="subheading mb-3">Google</div>
-                            <p>Designed and implemented automatic Al model regression detection. Wrote SQL queries to analyze test results. Integrated APIs into CI/CD pipelines.</p>
+                            <h3 class="mb-0">Software Engineer - Central AI &amp; Data Platform</h3>
+                            <div class="subheading mb-3">Atlassian</div>
+                            <ul>
+                                <li>Designed and implemented end-to-end data ingestion pipelines for third-party cloud storage connectors, including Google Drive, covering files, comments, and activity across millions of entities.</li>
+                                <li>Designed and implemented permission and ACL propagation systems for cloud connectors, minimizing access latency and reducing regression risk.</li>
+                                <li>Productionized OCR and document text-extraction pipelines in Python using Spark and Redshift to generate ML relevance signals for Rovo AI backend APIs.</li>
+                                <li>Built real-time latency observability and entity reconciliation pipelines using Kafka, Flink, Java, Kotlin, and Databricks to eliminate multi-cloud mapping drift.</li>
+                            </ul>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">December 2024 - Present</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">July 2025 - Present</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Software Engineer - Ads Safety Infrastructure</h3>
+                            <div class="subheading mb-3">Google</div>
+                            <ul>
+                                <li>Designed high-throughput C++ image and video classification pipelines leveraging FFmpeg for large-scale bad-ads detection.</li>
+                                <li>Built an AI model regression detection and validation system enabling faster and safer model iteration with SQL, gRPC, Python, and Bash.</li>
+                            </ul>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">December 2024 - July 2025</span></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Software Development Engineer III - Data Platform Infrastructure</h3>
                             <div class="subheading mb-3">GoDaddy</div>
-                            <p>Designed and implemented backend data lineage APIs and frontend graph visualization.  Designed new features for central Data Lake.  Designed solutions to reduce S3 and query costs. Improved CI/CD process.</p>
+                            <ul>
+                                <li>Designed and led backend data lineage APIs supporting thousands of datasets with Python and DynamoDB, plus React and Next.js graph visualization.</li>
+                                <li>Built core data lake capabilities and CI/CD automation using AWS Lake Formation, Glue, DynamoDB, and Python.</li>
+                                <li>Reduced Redshift and Athena costs by 20% and S3 storage costs by up to 55% through automated compression and query optimization workflows.</li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">April 2022 - December 2024</span></div>
                     </div>
@@ -99,55 +205,24 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Software Development Engineer I</h3>
                             <div class="subheading mb-3">Amazon</div>
-                            <p>Worked on chargeback processing system. Implemented new APIs and features. Implemented alarm systems and conducted chaos and integration tests.</p>
+                            <ul>
+                                <li>Led migration of legacy payments services from C++ to Java using shadow traffic, A/B testing, and metrics validation to avoid customer impact.</li>
+                                <li>Built backend APIs for chargeback document processing with comprehensive unit and integration test coverage.</li>
+                                <li>Improved system reliability through AWS monitoring, alarms, and chaos testing.</li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">July 2021 - March 2022</span></div>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Software and Electrical Engineer</h3>
-                            <div class="subheading mb-3">Milstein Hat for the Blind</div>
-                            <p>Designed circuitry for hat with distance sensors. Created sound engine for iOS application.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2019 - August 2020</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Machine Learning Research Assistant</h3>
-                            <div class="subheading mb-3">Cornell McMahon Quantum Computing Lab</div>
-                            <p>Used Pytorch to create ordinary differential equation based neural networks.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2019 - December 2019</span></div>
-                    </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Software Market Analyst</h3>
+                            <h3 class="mb-0">Software Market Analyst Intern</h3>
                             <div class="subheading mb-3">Canto Software</div>
-                            <p>Characterized the Digital Asset Management software market.</p>
+                            <ul>
+                                <li>Scraped, analyzed, and visualized digital asset management market data using Python.</li>
+                                <li>Identified competitive trends and product positioning insights influencing roadmap strategy.</li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">May 2019 - August 2019</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Cornell University</h3>
-                            <div class="subheading mb-3">Computer Science (BA) • 3.6 GPA</div>
-                            <p>Graduated in 3 years. Took the honors sequence for Physics majors then switched to Computer Science. Played club volleyball.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2018 - May 2021</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Phillips Academy Andover</h3>
-                            <div class="subheading mb-3">#1 Prep School in Years Attended • GPA: 5.5/6</div>
-                            <p>Boarded all four years. Played varsity volleyball and lead some community engagement organizations.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2014 - June 2018</span></div>
                     </div>
                 </div>
             </section>
@@ -158,54 +233,92 @@
                     <div class="subheading mb-3">Proficient</div>
                     <ul class="list-inline dev-icons">
                         <li class="list-inline-item"><i class="devicon-python-plain-wordmark"></i></li>
+                        <li class="list-inline-item"><i class="devicon-kotlin-plain-wordmark"></i></li>
                         <li class="list-inline-item"><i class="devicon-java-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-c-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-html5-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-css3-plain-wordmark"></i></li>
+                        <li class="list-inline-item"><i class="devicon-cplusplus-plain"></i></li>
                         <li class="list-inline-item"><i class="devicon-javascript-plain"></i></li>
                         <li class="list-inline-item"><i class="devicon-react-original"></i></li>
                         <li class="list-inline-item"><i class="devicon-nextjs-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-github-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-docker-plain"></i></li>
                         <li class="list-inline-item"><i class="devicon-amazonwebservices-plain-wordmark"></i></li>
                         <li class="list-inline-item"><i class="devicon-kubernetes-plain-wordmark"></i></li>
+                        <li class="list-inline-item"><i class="devicon-docker-plain"></i></li>
+                        <li class="list-inline-item"><i class="devicon-apachekafka-original-wordmark"></i></li>
+                        <li class="list-inline-item"><i class="devicon-apachespark-original-wordmark"></i></li>
                         <li class="list-inline-item"><i class="devicon-apacheairflow-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-sqlalchemy-plain"></i></li>
+                        <li class="list-inline-item"><i class="devicon-github-plain-wordmark"></i></li>
                     </ul>
-                    <div class="subheading mb-3">Languages</div>
+                    <div class="subheading mb-3">AI, Data &amp; Streaming Platforms</div>
                     <ul class="fa-ul">
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Python, Java, C, HTML/CSS, JavaScript, SQL, OCaml, ARM Assembly, Bash Scripting
+                            Spark, Kafka, Flink, Databricks, Redshift, OCR/text extraction pipelines, ML relevance signals, latency observability, data ingestion, entity reconciliation
                         </li>
                     </ul>
-                    <div class="subheading mb-3">Technologies/Frameworks</div>
-                     <ul class="fa-ul">
+                    <div class="subheading mb-3">Backend, Cloud &amp; Infrastructure</div>
+                    <ul class="fa-ul">
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
-                            AWS, Kubernetes, Docker, React, Next.js, CytoscapeJS, GraphQL, Apache Airflow, Helm
+                            AWS Lambda, S3, DynamoDB, Glue, Lake Formation, Athena, Kubernetes, Docker, gRPC, Apache Airflow, GraphQL, Helm, CI/CD automation
                         </li>
                     </ul>
-                    <div class="subheading mb-3">Developer Tools</div>
+                    <div class="subheading mb-3">Frontend &amp; Visualization</div>
                     <ul class="fa-ul">
-                         <li>
+                        <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Kibana, Google Analytics, ServiceNow, Github Actions, Insomnia, Alation
+                            React, Next.js, JavaScript, HTML/CSS, data lineage graph visualization
                         </li>
                     </ul>
-                    <br><br>
-                    <h2 class="mb-5">Soft Skills</h2>
-                    <div class="subheading mb-3">Native</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><span class="lead mb-5">English • Spanish</span></li>
+                    <div class="subheading mb-3">Languages &amp; Tools</div>
+                    <ul class="fa-ul">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Python, Kotlin, Java, C++, SQL, Bash, OCaml, C, ARM Assembly, GitHub Actions, Kibana, Alation, ServiceNow, Insomnia, Google Analytics
+                        </li>
                     </ul>
-                    <div class="subheading mb-3">Fluent</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><span class="lead mb-5">German • Portuguese</span></li>
-                    </ul>
-                    <div class="subheading mb-3">Conversational</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><span class="lead mb-5">Mandarin Chinese</span></li>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Cornell University</h3>
+                            <div class="subheading mb-3">Computer Science, B.A. &bull; 3.6 GPA</div>
+                            <p>Completed the degree in three years. Took the honors sequence for physics majors before switching to computer science and played club volleyball.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2018 - May 2021</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Research - Cornell McMahon Lab</h3>
+                            <div class="subheading mb-3">Quantum Computing</div>
+                            <p>Developed neural network models for simulated coherent Ising machines and built PyTorch classifiers to evaluate quantum optimization behavior.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2019 - December 2019</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Phillips Academy Andover</h3>
+                            <div class="subheading mb-3">GPA: 5.5/6</div>
+                            <p>Boarded all four years, played varsity volleyball, and led community engagement organizations.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">September 2014 - June 2018</span></div>
+                    </div>
+                    <div class="subheading mb-3 mt-5">Honors &amp; Awards</div>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            <strong>Milstein Scholar</strong> (May 2019): One of 25 students in the inaugural class of the <a href="https://milstein-program.as.cornell.edu/about" target="_blank" rel="noopener">Cornell Milstein Program in Humanity and Technology</a>.
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            <strong>Community Engagement Leadership Award</strong> (June 2018): Given for excellence in leading a Phillips Academy community service program.
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            <strong>Stevenson Prize</strong> (June 2018): Awarded to the top Phillips Academy German language student of the graduating class.
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -213,35 +326,37 @@
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Interests</h2>
-                    <p><i class="fa fa-gamepad" aria-hidden="true"></i> I love beach <a href="https://www.youtube.com/@peter_m_volleyball">volleyball, camping, and hiking</a>. </p>
-                    <p><i class="fa fa-home" aria-hidden="true"></i></i> I love board games like Avalon, Perudo (liar's dice), and Settlers of Catan (Cities and Knights), and there's a special place in my heart for Super Smash Bros. Melee. </p>
+                    <p><i class="fa fa-volleyball" aria-hidden="true"></i> I love beach volleyball, camping, and hiking. You can find my <a href="https://cbva.com/p/petercmunn" target="_blank" rel="noopener">CBVA profile</a> and <a href="https://www.youtube.com/@peter_m_volleyball" target="_blank" rel="noopener">volleyball YouTube channel</a> here.</p>
+                    <p><i class="fa fa-chess-board" aria-hidden="true"></i> I built <a href="https://www.cladistics.app/" target="_blank" rel="noopener">Cladistics</a>, a web app inspired by the ecological strategy board game Dominant Species.</p>
+                    <p><i class="fa fa-gamepad" aria-hidden="true"></i> I love board games like Avalon, Perudo, and Settlers of Catan, and there is a special place in my heart for Super Smash Bros. Melee.</p>
                 </div>
             </section>
             <hr class="m-0" />
-            <section class="resume-section" id="awards">
+            <section class="resume-section" id="resume">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Awards</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            <div class="subheading mb-3">Milstein Scholar (May 2019)</div> One of 25 students in inaugural class of <a href="https://milstein-program.as.cornell.edu/about">Cornell Milstein Program in Humanity and Technology</a>
-                            <br> <br> <br>
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            <div class="subheading mb-3">Community Engagement Leadership Award (June 2018)</div> Given for excellence in leading a Phillips Academy community service program
-                            <br> <br> <br>
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            <div class ="subheading mb-3">Stevenson Prize (June 2018)</div> Awarded to top Phillips Academy German language student of graduating class
-                        </li>
-                    </ul>
+                    <h2 class="mb-5">Resume</h2>
+                    <div class="resume-actions mb-4">
+                        <a class="resume-button" href="assets/PETER_MUNN_RESUME_JUNE_2026.pdf" target="_blank" rel="noopener">
+                            <i class="fas fa-up-right-from-square" aria-hidden="true"></i>
+                            Open PDF
+                        </a>
+                        <a class="resume-button" href="assets/PETER_MUNN_RESUME_JUNE_2026.pdf" download>
+                            <i class="fas fa-download" aria-hidden="true"></i>
+                            Download
+                        </a>
+                        <a class="resume-button" href="https://www.linkedin.com/in/petercmunn/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <object class="resume-viewer" data="assets/PETER_MUNN_RESUME_JUNE_2026.pdf" type="application/pdf">
+                        <p>Your browser cannot display the PDF inline. <a href="assets/PETER_MUNN_RESUME_JUNE_2026.pdf" target="_blank" rel="noopener">Open the resume PDF</a>.</p>
+                    </object>
                 </div>
             </section>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script src="js/scripts.js"></script>
     </body>
 </html>
